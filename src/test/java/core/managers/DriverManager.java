@@ -1,7 +1,5 @@
 package core.managers;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,14 +7,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import core.enums.DriverType;
 import core.enums.EnvironmentType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WebDriverManager {
+public class DriverManager {
 	private WebDriver driver;
 	private static DriverType driverType;
 	private static EnvironmentType environmentType;
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
-	public WebDriverManager() {
+	public DriverManager() {
 		driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
 		environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
 	}
@@ -48,7 +47,7 @@ public class WebDriverManager {
 	        case FIREFOX : driver = new FirefoxDriver();
 		    	break;
 	        case CHROME : 
-	        	WebDriverManager.chromedriver().setup();
+	        	 WebDriverManager.chromedriver().setup();
 	        	driver = new ChromeDriver();
 	    		break;
 	        case EDGE : driver = new EdgeDriver();
