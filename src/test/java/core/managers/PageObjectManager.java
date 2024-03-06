@@ -2,19 +2,19 @@ package core.managers;
 
 import org.openqa.selenium.WebDriver;
 
-import test.page.HomePage;
+import test.logic.HomeLogic;
 
 public class PageObjectManager {
 	
 	private WebDriver driver;
-	private HomePage homePage;
+	private HomeLogic homeLogic;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	public HomePage getHomePage() {
-		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
+	public HomeLogic getHomeLogic() {
+		return (homeLogic == null) ? homeLogic = new HomeLogic(driver) : homeLogic;
 	}
 
 }

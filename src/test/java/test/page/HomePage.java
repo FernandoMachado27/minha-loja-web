@@ -1,18 +1,23 @@
 package test.page;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import core.dataProviders.ConfigFileReader;
+import lombok.Getter;
 
+@Getter
 public class HomePage {
 	
 	WebDriver driver;
-	ConfigFileReader configFileReader;
 	
-	public HomePage(WebDriver driver) {
-		this.driver = driver;
+	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
+
+	@FindBy(how = How.XPATH, using = "(//img[@alt='My Shop'])[1]")
+	private WebElement logo;
 
 }

@@ -47,7 +47,7 @@ public class DriverManager {
 	        case FIREFOX : driver = new FirefoxDriver();
 		    	break;
 	        case CHROME : 
-	        	 WebDriverManager.chromedriver().setup();
+	        	WebDriverManager.chromedriver().driverVersion(FileReaderManager.getInstance().getConfigReader().getVersionChrome()).setup();;
 	        	driver = new ChromeDriver();
 	    		break;
 	        case EDGE : driver = new EdgeDriver();

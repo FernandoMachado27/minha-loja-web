@@ -1,16 +1,22 @@
 package test.steps;
 
-import org.openqa.selenium.WebDriver;
-
-import core.dataProviders.ConfigFileReader;
-import core.managers.PageObjectManager;
-import test.page.HomePage;
+import core.cucumber.TestContext;
+import io.cucumber.java.pt.Dado;
+import test.logic.HomeLogic;
 
 public class HomeSteps {
 	
-	WebDriver driver;
-	HomePage homePage;
-	PageObjectManager pageObjectManager;
-	ConfigFileReader configFileReader;
+	private TestContext testContext;
+	private HomeLogic homeLogic;
+	
+	public HomeSteps(TestContext context) {
+		this.testContext = context;
+		this.homeLogic = testContext.getPageObjectManager().getHomeLogic();
+	}
+	
+	@Dado("que o usuario acessa o site")
+	public void queOUsuarioAcessaOSite() {
+		this.homeLogic.paginaInicial();
+	}
 
 }
