@@ -12,7 +12,7 @@ import core.enums.EnvironmentType;
 public class ConfigFileReader {
 
 	private Properties properties;
-	private final String propertyFilePath = "config//Configuration.properties";
+	private final String propertyFilePath = "C:\\Users\\Ferna\\eclipse-workspace\\minha-loja-web\\src\\test\\resources\\config\\Configuration.properties";
 
 	public ConfigFileReader() {
 		BufferedReader reader;

@@ -2,6 +2,7 @@ package test.steps;
 
 import core.cucumber.TestContext;
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
 import test.logic.HomeLogic;
 
 public class HomeSteps {
@@ -17,6 +18,11 @@ public class HomeSteps {
 	@Dado("que o usuario acessa o site")
 	public void queOUsuarioAcessaOSite() {
 		this.homeLogic.paginaInicial();
+	}
+	
+	@Então("retorna tela inicial")
+	public void retornaTelaInicial() {
+		this.homeLogic.validarPaginaInicial();
 	}
 
 }
