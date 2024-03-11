@@ -10,12 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import core.managers.FileReaderManager;
 import test.page.HomePage;
+import utils.Utils;
 
 public class HomeLogic {
 	
 	WebDriver driver;
 	private WebDriverWait wait;
 	private HomePage homePage;
+	private Utils utils;
 	
 	public HomeLogic(WebDriver driver) {
 		this.driver = driver;
@@ -28,12 +30,8 @@ public class HomeLogic {
 		wait.until(ExpectedConditions.visibilityOf(homePage.getLogo()));
 	}
 
-	public boolean validarPaginaInicial() {
-		boolean nome = wait
-				.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath("(//img[@alt='My Shop'])[1]")))
-				.isDisplayed();
-		return nome;
+	public void acionaAOpcaoWomen() {
+		homePage.getBtWomen().click();
 	}
 
 }
