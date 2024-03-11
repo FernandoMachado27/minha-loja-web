@@ -9,18 +9,18 @@ import org.openqa.selenium.support.PageFactory;
 import lombok.Getter;
 
 @Getter
-public class HomePage {
+public class WomenPage {
 	
 	WebDriver driver;
 	
-	public HomePage() {
+	public WomenPage() {
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(how = How.XPATH, using = "(//img[@alt='My Shop'])[1]")
-	private WebElement logo;
 	
-	@FindBy(how = How.XPATH, using = "(//a[@title='Women'])[1]")
-	private WebElement btWomen;
+	@FindBy(how = How.XPATH, using = "//*[text()='You will find here all woman fashion collections.']")
+	private WebElement txtWomen;
+
+	@FindBy(how = How.XPATH, using = "(//a[normalize-space()='Tops'])[2]")
+	private WebElement btTops;
 
 }
