@@ -27,4 +27,8 @@ public class WomenLogic {
 		assertTrue("Não exibiu a mensagem Women", womenPage.getTxtWomen().isDisplayed());
 	}
 
+	public void acionaAOpcaoTops() {
+		womenPage.getBtTops().click();
+	}
+
 }
