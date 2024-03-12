@@ -20,14 +20,9 @@ public class WomenSteps {
 		womenLogic.validarTelaWomen();
 	}
 	
-//	@Quando("aciona a opção Tops")
-//	public void aciona_a_opção_Tops() {
-//		womenLogic.acionaAOpcaoTops();
-//	}
-	
-//	@Então("retorna tela Tops")
-//	public void retorna_tela_Tops() {
-//		womenLogic.validarTelaTops();
-//	}
+	@Quando("aciona a opção Tops")
+	public void aciona_a_opção_Tops() {
+		womenLogic.acionaAOpcaoTops();
+	}
 
 }
