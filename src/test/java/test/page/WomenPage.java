@@ -21,6 +21,6 @@ public class WomenPage {
 	private WebElement txtWomen;
 
 	@FindBy(how = How.XPATH, using = "(//a[normalize-space()='Tops'])[2]")
-	private WebElement btTops;
+	private WebElement btnTops;
 
 }
