@@ -21,6 +21,6 @@ public class HomePage {
 	private WebElement logo;
 	
 	@FindBy(how = How.XPATH, using = "(//a[@title='Women'])[1]")
-	private WebElement btWomen;
+	private WebElement btnWomen;
 
 }
